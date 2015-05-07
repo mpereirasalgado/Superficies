@@ -20,6 +20,13 @@ public class Superficies {
         menu(contenedor);
     }
     
+    /**
+     * metodo menu en el que escogemos la superficie que deseamos calcular
+     * se guarada la opcion seleccionada
+     * se introducen los datos pedidos
+     * se llama al metodo calcular y al metodo imprimir
+     * @param contenedor
+     */
     public static void menu(Modelo contenedor){
         int opcion = 0;
         do{
@@ -62,6 +69,13 @@ public class Superficies {
             
         }while(opcion < 6 || opcion > 0 );
     }
+
+    /**
+     * metodo de calculo de ojeto contenedor de datos de tipo Modelo
+     * se recoge el tipo de superficie elegida en el metodo menu
+     * se calcula su area
+     * @param contenedor
+     */
     public static void calcular(Modelo contenedor){
         if (contenedor.getSelectArea() == 0){
             contenedor.setSquareArea(contenedor.getSideLength()*contenedor.getSideLength());
