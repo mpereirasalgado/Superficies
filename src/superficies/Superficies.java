@@ -11,15 +11,16 @@ import superficies.Modelo;
  */
 public class Superficies {
 
-    private static Scanner sc;
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         Modelo contenedor= new Modelo();
+        menu(contenedor);
         
-        String shapeType;
+        
+        /***String shapeType;
 
         sc = new Scanner(System.in);
 
@@ -75,9 +76,9 @@ public class Superficies {
             radius = sc.nextFloat();
             circleArea = radius * radius;
             circleArea = (float) (3.14159265 * circleArea);
-            System.out.println("Your Circles area is " + circleArea);
+            System.out.println("Your Circles area is " + circleArea);**/
 
-        }
+        
 
     }
     
@@ -91,25 +92,29 @@ public class Superficies {
                     + "4.- RECTANGLE\n"
                     + "5.- SALIR\n"))){
                 case 1:
+                    contenedor.setSelectArea(0);
                     contenedor.setSideLength(Float.valueOf(JOptionPane.showInputDialog("what is the side length?")));
-                    realizarOperacion(contenedor);
+                    calcular(contenedor);
                     Vista.Imprimir(contenedor);
                     break;
                 case 2:
+                    contenedor.setSelectArea(1);
                     contenedor.setRadius(Float.valueOf(JOptionPane.showInputDialog("What is the radius of the circle?")));
-                     realizarOperacion(contenedor);
+                    calcular(contenedor);
                      Vista.Imprimir(contenedor);
                     break;
                 case 3:
+                    contenedor.setSelectArea(2);
                     contenedor.setBaseLength(Float.valueOf(JOptionPane.showInputDialog("What is the base length of the triangle?")));
                     contenedor.setHeight(Float.valueOf(JOptionPane.showInputDialog("What is the height of the triangle?")));
-                    realizarOperacion(contenedor);
+                    calcular(contenedor);
                     Vista.Imprimir(contenedor);
                     break;
                 case 4:
+                    contenedor.setSelectArea(3);
                     contenedor.setSideLength(Float.valueOf(JOptionPane.showInputDialog("what is the rectangles width?")));
                     contenedor.setSideHeight(Float.valueOf(JOptionPane.showInputDialog("What is the rectangles height?")));
-                     realizarOperacion(contenedor);
+                    calcular(contenedor);
                      Vista.Imprimir(contenedor);
                     break;
                 case 5:
@@ -119,7 +124,15 @@ public class Superficies {
             
         }while(opcion < 6 || opcion > 0 );
     }
-    public static void calcular(){
-        
+    public static void calcular(Modelo contenedor){
+        if (contenedor.getSelectArea() == 0){
+            contenedor.setSquareArea(contenedor.getSideLength()*contenedor.getSideLength());
+        }else if(contenedor.getSelectArea() == 1){
+            contenedor.setCircleArea((float) 3.14159265 *(contenedor.getRadius()*contenedor.getRadius()));
+        }else if(contenedor.getSelectArea()== 2){
+            contenedor.setTriangleArea((contenedor.getBaseLength()*contenedor.getHeight())/2);
+        }else if(contenedor.getSelectArea()== 3){
+            contenedor.setRectangleArea(contenedor.getSideHeight()*contenedor.getSideLength());
+        }
     }
 }
