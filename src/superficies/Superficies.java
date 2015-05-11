@@ -12,12 +12,16 @@ import superficies.Visualizar;
 public class Superficies {
 
 
-    /**
+    /**cambios realizados
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        //pedir fig
+        //Pedir dato
+        //calcularDato
+        //imrpimir
         Modelo contenedor= new Modelo();
-        menu(contenedor);
+        Visualizar.menu(contenedor);
     }
     
     /**
@@ -27,48 +31,7 @@ public class Superficies {
      * se llama al metodo calcular y al metodo imprimir
      * @param contenedor
      */
-    public static void menu(Modelo contenedor){
-        int opcion = 0;
-        do{
-            switch(Integer.parseInt(JOptionPane.showInputDialog("****\"What shape would you like to find the area of? (square, circle, triangle, rectangle):\"****\n"
-                    + "1.- SQUARE\n"
-                    + "2.- CIRCLE\n"
-                    + "3.- TRIANGLE\n"
-                    + "4.- RECTANGLE\n"
-                    + "5.- SALIR\n"))){
-                case 1:
-                    contenedor.setSelectArea(0);
-                    contenedor.setSideLength(Float.valueOf(JOptionPane.showInputDialog("what is the side length?")));
-                    calcular(contenedor);
-                    Visualizar.Imprimir(contenedor);
-                    break;
-                case 2:
-                    contenedor.setSelectArea(1);
-                    contenedor.setRadius(Float.valueOf(JOptionPane.showInputDialog("What is the radius of the circle?")));
-                    calcular(contenedor);
-                    Visualizar.Imprimir(contenedor);
-                    break;
-                case 3:
-                    contenedor.setSelectArea(2);
-                    contenedor.setBaseLength(Float.valueOf(JOptionPane.showInputDialog("What is the base length of the triangle?")));
-                    contenedor.setHeight(Float.valueOf(JOptionPane.showInputDialog("What is the height of the triangle?")));
-                    calcular(contenedor);
-                    Visualizar.Imprimir(contenedor);
-                    break;
-                case 4:
-                    contenedor.setSelectArea(3);
-                    contenedor.setSideLength(Float.valueOf(JOptionPane.showInputDialog("what is the rectangles width?")));
-                    contenedor.setSideHeight(Float.valueOf(JOptionPane.showInputDialog("What is the rectangles height?")));
-                    calcular(contenedor);
-                    Visualizar.Imprimir(contenedor);
-                    break;
-                case 5:
-                    System.exit(opcion);
-                    break;
-            }
-            
-        }while(opcion < 6 || opcion > 0 );
-    }
+    
 
     /**
      * metodo de calculo de ojeto contenedor de datos de tipo Modelo
