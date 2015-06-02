@@ -8,7 +8,7 @@ package superficies;
 
 import java.util.Scanner;
 import javax.swing.JOptionPane;
-import static superficies.Superficies.calcular;
+import static superficies.logic.calcular;
 
 /**
  * commit añadido tambien
@@ -20,17 +20,7 @@ public class Visualizar {
      * metodo que nos manda en ventana el resultado del area calculada
      * @param contenedor
      */
-    public static void Imprimir(Modelo contenedor){
-        if (contenedor.getSelectArea() == 0){
-            JOptionPane.showMessageDialog(null, "The area for your square:  "+contenedor.getSquareArea());
-        }else if(contenedor.getSelectArea() == 1){
-            JOptionPane.showMessageDialog(null, "Your Circles area is:  "+contenedor.getCircleArea());
-        }else if(contenedor.getSelectArea() == 2){
-            JOptionPane.showMessageDialog(null, "Your triangles area is:  "+contenedor.getTriangleArea());
-        }else if(contenedor.getSelectArea()== 3){
-            JOptionPane.showMessageDialog(null, "The area for your rectangle is:  "+contenedor.getRectangleArea());
-        }
-    }
+    
     public static void menu(Modelo contenedor){
         int opcion = 0;
         do{
@@ -72,6 +62,18 @@ public class Visualizar {
             }
             
         }while(opcion < 6 || opcion > 0 );
+    }
+    
+    public static void Imprimir(Modelo contenedor){
+        if (contenedor.getSelectArea() == 0){
+            JOptionPane.showMessageDialog(null, "The area for your square:  "+contenedor.getSquareArea());
+        }else if(contenedor.getSelectArea() == 1){
+            JOptionPane.showMessageDialog(null, "Your Circles area is:  "+contenedor.getCircleArea());
+        }else if(contenedor.getSelectArea() == 2){
+            JOptionPane.showMessageDialog(null, "Your triangles area is:  "+contenedor.getTriangleArea());
+        }else if(contenedor.getSelectArea()== 3){
+            JOptionPane.showMessageDialog(null, "The area for your rectangle is:  "+contenedor.getRectangleArea());
+        }
     }
     
 }

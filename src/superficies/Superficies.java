@@ -33,21 +33,6 @@ public class Superficies {
      */
     
 
-    /**
-     * metodo de calculo de ojeto contenedor de datos de tipo Modelo
-     * se recoge el tipo de superficie elegida en el metodo menu
-     * se calcula su area
-     * @param contenedor
-     */
-    public static void calcular(Modelo contenedor){
-        if (contenedor.getSelectArea() == 0){
-            contenedor.setSquareArea(contenedor.getSideLength()*contenedor.getSideLength());
-        }else if(contenedor.getSelectArea() == 1){
-            contenedor.setCircleArea((float) 3.14159265 *(contenedor.getRadius()*contenedor.getRadius()));
-        }else if(contenedor.getSelectArea()== 2){
-            contenedor.setTriangleArea((contenedor.getBaseLength()*contenedor.getHeight())/2);
-        }else if(contenedor.getSelectArea()== 3){
-            contenedor.setRectangleArea(contenedor.getSideHeight()*contenedor.getSideLength());
-        }
-    }
+    
+    
 }
